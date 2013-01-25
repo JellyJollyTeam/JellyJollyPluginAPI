@@ -16,20 +16,33 @@
  */
 package cn.edu.seu.cose.jellyjolly.plugin.event;
 
+import cn.edu.seu.cose.jellyjolly.model.Comment;
+
 /**
  *
  * @author rAy
  */
 public class CommentEvent implements Event {
 
-    @Override
-    public long getWhen() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    private long time;
+    private Comment comment;
+
+    public CommentEvent(Comment comment) {
+        time = System.currentTimeMillis();
+        this.comment = comment;
+    }
+
+    public CommentEvent(Comment comment, long time) {
+        this.time = time;
+        this.comment = comment;
     }
 
     @Override
-    public String getInfo() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public long getTime() {
+        return time;
     }
-    
+
+    public Comment getComment() {
+        return comment;
+    }
 }

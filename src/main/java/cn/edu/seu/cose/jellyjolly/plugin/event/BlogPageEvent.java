@@ -17,10 +17,33 @@
 
 package cn.edu.seu.cose.jellyjolly.plugin.event;
 
+import cn.edu.seu.cose.jellyjolly.model.BlogPage;
+
 /**
  *
  * @author rAy <predator.ray@gmail.com>
  */
-public class BlogPageEvent {
+public class BlogPageEvent implements Event {
 
+    private long time;
+    private BlogPage blogPage;
+
+    public BlogPageEvent(BlogPage blogPage) {
+        time = System.currentTimeMillis();
+        this.blogPage = blogPage;
+    }
+
+    public BlogPageEvent(BlogPage blogPage, long time) {
+        time = System.currentTimeMillis();
+        this.blogPage = blogPage;
+    }
+
+    @Override
+    public long getTime() {
+        return time;
+    }
+
+    public BlogPage getBBlogPage() {
+        return blogPage;
+    }
 }

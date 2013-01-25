@@ -16,26 +16,33 @@
  */
 package cn.edu.seu.cose.jellyjolly.plugin.event;
 
+import cn.edu.seu.cose.jellyjolly.model.BlogPost;
+
 /**
  *
  * @author rAy
  */
 public class BlogPostEvent implements Event {
-    
-    private long when;
-    
-    public BlogPostEvent() {
-        when = System.currentTimeMillis();
+
+    private long time;
+    private BlogPost blogPost;
+
+    public BlogPostEvent(BlogPost blogPost) {
+        time = System.currentTimeMillis();
+        this.blogPost = blogPost;
+    }
+
+    public BlogPostEvent(BlogPost blogPost, long time) {
+        time = System.currentTimeMillis();
+        this.blogPost = blogPost;
     }
 
     @Override
-    public long getWhen() {
-        return when;
+    public long getTime() {
+        return time;
     }
 
-    @Override
-    public String getInfo() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public BlogPost getBlogPost() {
+        return blogPost;
     }
-    
 }

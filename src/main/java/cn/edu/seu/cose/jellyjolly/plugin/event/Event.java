@@ -21,9 +21,6 @@ package cn.edu.seu.cose.jellyjolly.plugin.event;
  * @author rAy
  */
 public interface Event {
-    
-    public long getWhen();
-    
-    public String getInfo();
-    
+
+    public long getTime();
 }
