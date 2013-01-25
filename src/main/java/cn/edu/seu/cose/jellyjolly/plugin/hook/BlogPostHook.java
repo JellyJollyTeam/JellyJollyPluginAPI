@@ -27,7 +27,7 @@ import cn.edu.seu.cose.jellyjolly.plugin.hook.exception.HookException;
 public interface BlogPostHook {
 
     public void blogPostAdded(BlogPostEvent e)
-            throws AbortException, HookException;
+            throws HookException;
 
     public void blogPostEdited(BlogPostEvent e)
             throws AbortException, HookException;
@@ -36,5 +36,5 @@ public interface BlogPostHook {
             throws AbortException, HookException;
 
     public void blogPostViewed(BlogPostEvent e)
-            throws AbortException, HookException;
+            throws HookException;
 }

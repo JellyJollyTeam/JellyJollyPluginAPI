@@ -4,7 +4,7 @@
  */
 package cn.edu.seu.cose.jellyjolly.plugin.hook;
 
-import cn.edu.seu.cose.jellyjolly.plugin.event.BlogPostEvent;
+import cn.edu.seu.cose.jellyjolly.plugin.event.CommentEvent;
 import cn.edu.seu.cose.jellyjolly.plugin.hook.exception.AbortException;
 import cn.edu.seu.cose.jellyjolly.plugin.hook.exception.HookException;
 
@@ -14,9 +14,9 @@ import cn.edu.seu.cose.jellyjolly.plugin.hook.exception.HookException;
  */
 public interface CommentHook {
 
-    public void commentAdded(BlogPostEvent e)
+    public void commentAdded(CommentEvent e)
             throws AbortException, HookException;
 
-    public void commentRemoved(BlogPostEvent e)
+    public void commentRemoved(CommentEvent e)
             throws AbortException, HookException;
 }
